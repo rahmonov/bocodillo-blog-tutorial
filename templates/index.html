@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Posts</title>
+</head>
+<body>
+  <h1>Posts</h1>
+  {% if posts %}
+    <ul>
+        {% for post in posts %}
+          <li>
+            <h3><a href="/posts/{{post.slug}}">{{ post.title }} by {{ post.author_name }}</a></h3>
+            <h4>{{post.summary}}</h4>
+            <hr>
+          </li>
+        {% endfor %}
+    </ul>
+  {% else %}
+    <p>No posts yet!</p>
+  {% endif %}
+</body>
+</html>
